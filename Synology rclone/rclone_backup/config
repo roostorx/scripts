@@ -2,7 +2,8 @@
 
 # Local directories to be backed up (comma-separated list)
 # Example format: "/volume1/ISOs,/volume2/Documents"
-LOCALDIRS="/volume1/"
+# creating source directory files and hard coding in volume1 in the backup script, so you can list out the source directories and also use that as a destination on the remote 
+LOCALDIRS="dir1,dir2"
 
 # Remote directory destination (e.g., Google Drive)
 REMOTEDIR="rcloneremote:"
@@ -25,7 +26,8 @@ TRANSFER_LIMIT=4
 # Exclude patterns (comma-separated list)
 # Example format: "*.tmp,*.log,*/temp/*"
 # Reference: https://rclone.org/filtering/#exclude
-EXCLUDE_PATTERNS="*.db@SynoEAStream,.db,*/@eaDir/**,*.DS_Store,*.lnk,*@SynoResource*,*@eaDir*,*#recycle*"
+# updated a few of the synology junk folders/snapshot with /** syntax
+EXCLUDE_PATTERNS="*.db@SynoEAStream,.db,@eaDir/**,*.DS_Store,*.lnk,*@SynoResource*,*@eaDir*,*#recycle/**,*.stfolder/**,.stignore*,#snapshot/**"
 
 # Exclude directories if a specified filename is present (comma-separated list)
 # Example format: "secret.txt,temp.txt"
