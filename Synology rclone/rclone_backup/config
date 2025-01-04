@@ -2,7 +2,7 @@
 
 # Local directories to be backed up (comma-separated list)
 # Example format: "/volume1/ISOs,/volume2/Documents"
-# creating source directory files and hard coding in volume1 in the backup script, so you can list out the source directories and also use that as a destination on the remote 
+# creating source directory names and hard coding in volume1 in the backup script, so you can list out the source directories and also use that as a destination on the remote so directories get uploaded on the remote
 LOCALDIRS="dir1,dir2"
 
 # Remote directory destination (e.g., Google Drive)
