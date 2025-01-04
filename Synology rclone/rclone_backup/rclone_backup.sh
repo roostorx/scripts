@@ -93,7 +93,7 @@ for LOCALDIR in "${local_dirs_array[@]}"; do
     echo "Starting $OPERATION_MODE for $LOCALDIR" | tee -a $LOGFILE
 
     # Construct rclone command with conditional inclusion of flags
-    RCLONE_CMD="rclone $OPERATION_MODE \"$LOCALDIR\" \"$REMOTEDIR\" --log-level=$LOGLEVEL --log-file=$LOGFILE --transfers=$TRANSFER_LIMIT $BWLIMIT $CUSTOM_FLAGS $PROGRESS_FLAG --retries=$RETRIES --retries-sleep=${RETRY_DELAY}s --checkers=$CHECKERS $VERBOSE_FLAG $DRY_RUN_FLAG"
+    RCLONE_CMD="rclone $OPERATION_MODE "/volume1/"\"$LOCALDIR\" \"$REMOTEDIR$LOCALDIR\" --log-level=$LOGLEVEL --log-file=$LOGFILE --transfers=$TRANSFER_LIMIT $BWLIMIT $CUSTOM_FLAGS $PROGRESS_FLAG --retries=$RETRIES --retries-sleep=${RETRY_DELAY}s --checkers=$CHECKERS $VERBOSE_FLAG $DRY_RUN_FLAG"
 
     # Append include and exclude flags if they are not empty
     if [ ${#INCLUDE_FLAGS[@]} -ne 0 ]; then
